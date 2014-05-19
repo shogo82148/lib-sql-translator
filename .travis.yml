@@ -1,0 +1,2 @@
+language: cpp
+script: autoreconf -fi && ./configure && make && make check
