@@ -31,6 +31,7 @@ public:
     std::vector<Constraint> get_constraints() const {
         return constraints;
     }
+    std::vector<Constraint> unique_constraints() const;
 
     Table();
     virtual ~Table();
