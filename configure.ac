@@ -5,6 +5,8 @@ AC_PREREQ([2.68])
 AC_INIT([sql translator c++ library], [0.01], [shogo82148@gmail.com])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src])
+
+AM_INIT_AUTOMAKE([foreign])
 AM_CONFIG_HEADER(config.h)
 
 # Checks for programs.
