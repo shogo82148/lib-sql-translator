@@ -50,6 +50,17 @@ Table& Table::add_index(const Index& index) {
     return *this;
 }
 
+Table& Table::drop_index(const std::string& name) {
+    auto i = std::find_if(
+            indices.begin(), indices.end(),
+            [&](const Index& i){ return i.name == name; });
+    if(i == indices.end()) {
+        throw "index not found";
+    }
+    indices.erase(i);
+    return *this;
+}
+
 Table::Table() {
     // TODO Auto-generated constructor stub
 

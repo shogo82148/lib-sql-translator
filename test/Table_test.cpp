@@ -82,6 +82,13 @@ TEST(table, index) {
         EXPECT_EQ("index1", indices[0].name);
         EXPECT_EQ("index2", indices[1].name);
     }
+
+    t.drop_index("index2");
+    {
+        auto indices = t.get_indices();
+        EXPECT_EQ(1, indices.size());
+        EXPECT_EQ("index1", indices[0].name);
+    }
 }
 
 } /* namespace sqltranslator */

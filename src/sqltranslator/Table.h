@@ -39,6 +39,10 @@ public:
     std::vector<Constraint> fkey_constraints() const;
 
     Table& add_index(const Index& index);
+    Table& drop_index(const std::string& name);
+    Table& drop_index(const Index& i) {
+        return drop_index(i.name);
+    }
     std::vector<Index> get_indices() const {
         return indices;
     }
