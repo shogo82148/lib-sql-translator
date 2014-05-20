@@ -1,3 +1,4 @@
 int translate() {
-    return 0;
+    auto i = 1;
+    return i-1;
 }

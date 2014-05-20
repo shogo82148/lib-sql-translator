@@ -10,6 +10,9 @@ AM_INIT_AUTOMAKE([foreign])
 AM_CONFIG_HEADER(config.h)
 
 # Checks for programs.
+m4_include([m4/ax_cxx_compile_stdcxx_11.m4])
+AX_CXX_COMPILE_STDCXX_11
+AC_LANG([C++])
 AC_PROG_CXX
 AC_PROG_RANLIB
 
