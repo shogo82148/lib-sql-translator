@@ -27,7 +27,7 @@ Table& Table::drop_constraint(const std::string& name) {
 
 std::vector<Constraint> Table::unique_constraints() const {
     std::vector<Constraint> v;
-    for(auto c: constraints) {
+    for(auto &c: constraints) {
         if(c.type == constraint_type::UNIQUE) {
             v.push_back(c);
         }
@@ -37,7 +37,7 @@ std::vector<Constraint> Table::unique_constraints() const {
 
 std::vector<Constraint> Table::fkey_constraints() const {
     std::vector<Constraint> v;
-    for(auto c: constraints) {
+    for(auto &c: constraints) {
         if(c.type == constraint_type::FOREIGN_KEY) {
             v.push_back(c);
         }
