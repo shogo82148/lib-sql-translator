@@ -67,4 +67,21 @@ TEST(table, fkeyConstraints) {
     EXPECT_EQ("constraint 2", constraints[0].name);
 }
 
+TEST(table, index) {
+    Index i1, i2;
+    i1.name = "index1";
+    i2.name = "index2";
+
+    Table t;
+    t.add_index(i1);
+    t.add_index(i2);
+
+    {
+        auto indices = t.get_indices();
+        EXPECT_EQ(2, indices.size());
+        EXPECT_EQ("index1", indices[0].name);
+        EXPECT_EQ("index2", indices[1].name);
+    }
+}
+
 } /* namespace sqltranslator */

@@ -38,6 +38,11 @@ public:
     std::vector<Constraint> unique_constraints() const;
     std::vector<Constraint> fkey_constraints() const;
 
+    Table& add_index(const Index& index);
+    std::vector<Index> get_indices() const {
+        return indices;
+    }
+
     Table();
     virtual ~Table();
 };

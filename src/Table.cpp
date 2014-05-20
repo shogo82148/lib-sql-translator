@@ -45,6 +45,11 @@ std::vector<Constraint> Table::fkey_constraints() const {
     return v;
 }
 
+Table& Table::add_index(const Index& index) {
+    indices.push_back(index);
+    return *this;
+}
+
 Table::Table() {
     // TODO Auto-generated constructor stub
 
