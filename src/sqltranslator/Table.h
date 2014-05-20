@@ -25,6 +25,13 @@ private:
     std::vector<Index> indices;
     std::map<std::string, Field> fields;
 public:
+    std::vector<std::string> comments;
+
+    Table& add_constraint(const Constraint& c);
+    std::vector<Constraint> get_constraints() const {
+        return constraints;
+    }
+
     Table();
     virtual ~Table();
 };

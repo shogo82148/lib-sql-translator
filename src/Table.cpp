@@ -9,6 +9,11 @@
 
 namespace sqltranslator {
 
+Table& Table::add_constraint(const Constraint& c) {
+    constraints.push_back(c);
+    return *this;
+}
+
 Table::Table() {
     // TODO Auto-generated constructor stub
 
