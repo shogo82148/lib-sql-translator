@@ -5,7 +5,7 @@
  *      Author: shogo
  */
 
-#include "/Users/shogo/workspace/lib-sql-translator/src/sqltranslator/Index.h"
+#include "src/sqltranslator/Index.h"
 
 namespace sqltranslator {
 
