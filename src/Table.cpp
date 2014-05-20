@@ -14,6 +14,17 @@ Table& Table::add_constraint(const Constraint& c) {
     return *this;
 }
 
+Table& Table::drop_constraint(const std::string& name) {
+    auto c = std::find_if(
+            constraints.begin(), constraints.end(),
+            [&](const Constraint& c){ return c.name == name; });
+    if(c == constraints.end()) {
+        throw "constraint not found";
+    }
+    constraints.erase(c);
+    return *this;
+}
+
 std::vector<Constraint> Table::unique_constraints() const {
     std::vector<Constraint> v;
     for(auto c: constraints) {

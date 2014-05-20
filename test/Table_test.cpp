@@ -20,10 +20,19 @@ TEST(table, constraints) {
     t.add_constraint(c1);
     t.add_constraint(c2);
 
-    auto constraints = t.get_constraints();
-    EXPECT_EQ(2, constraints.size());
-    EXPECT_EQ("constraint 1", constraints[0].name);
-    EXPECT_EQ("constraint 2", constraints[1].name);
+    {
+        auto constraints = t.get_constraints();
+        EXPECT_EQ(2, constraints.size());
+        EXPECT_EQ("constraint 1", constraints[0].name);
+        EXPECT_EQ("constraint 2", constraints[1].name);
+    }
+
+    t.drop_constraint("constraint 2");
+    {
+        auto constraints = t.get_constraints();
+        EXPECT_EQ(1, constraints.size());
+        EXPECT_EQ("constraint 1", constraints[0].name);
+    }
 }
 
 TEST(table, uniqueConstraints) {

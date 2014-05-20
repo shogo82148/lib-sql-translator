@@ -28,6 +28,10 @@ public:
     std::vector<std::string> comments;
 
     Table& add_constraint(const Constraint& c);
+    Table& drop_constraint(const std::string& name);
+    Table& drop_constraint(const Constraint& c) {
+        return drop_constraint(c.name);
+    }
     std::vector<Constraint> get_constraints() const {
         return constraints;
     }
