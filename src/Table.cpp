@@ -24,6 +24,16 @@ std::vector<Constraint> Table::unique_constraints() const {
     return v;
 }
 
+std::vector<Constraint> Table::fkey_constraints() const {
+    std::vector<Constraint> v;
+    for(auto c: constraints) {
+        if(c.type == constraint_type::FOREIGN_KEY) {
+            v.push_back(c);
+        }
+    }
+    return v;
+}
+
 Table::Table() {
     // TODO Auto-generated constructor stub
 

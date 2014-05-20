@@ -42,5 +42,20 @@ TEST(table, uniqueConstraints) {
     EXPECT_EQ("constraint 2", constraints[0].name);
 }
 
+TEST(table, fkeyConstraints) {
+    Constraint c1, c2;
+    c1.name = "constraint 1";
+    c2.type = constraint_type::PRIMARY_KEY;
+    c2.name = "constraint 2";
+    c2.type = constraint_type::FOREIGN_KEY;
+
+    Table t;
+    t.add_constraint(c1);
+    t.add_constraint(c2);
+
+    auto constraints = t.fkey_constraints();
+    EXPECT_EQ(1, constraints.size());
+    EXPECT_EQ("constraint 2", constraints[0].name);
+}
 
 } /* namespace sqltranslator */

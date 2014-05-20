@@ -32,6 +32,7 @@ public:
         return constraints;
     }
     std::vector<Constraint> unique_constraints() const;
+    std::vector<Constraint> fkey_constraints() const;
 
     Table();
     virtual ~Table();
