@@ -10,10 +10,16 @@
 namespace sqltranslator {
 
 Field::Field() {
-    data_type = SQLType::UNKNOWN_TYPE;
-    is_auto_increment = false;
-    is_nullable = true;
-    has_default_value = false;
+}
+
+Field::Field(const std::string& name) :name(name) {
+}
+
+Field::Field(const std::string& name, SQLType data_type, const std::string& default_value)
+    : name(name)
+    , data_type(data_type)
+    , default_value(default_value)
+    , has_default_value(true) {
 }
 
 Field::~Field() {

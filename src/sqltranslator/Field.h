@@ -76,15 +76,17 @@ enum class SQLType :int {
 
 class Field: public Object {
 public:
-    SQLType data_type;
+    SQLType data_type = SQLType::UNKNOWN_TYPE;
     std::string name;
-    bool is_auto_increment;
-    bool is_nullable;
-    bool has_default_value;
+    bool is_auto_increment = false;
+    bool is_nullable = true;
+    bool has_default_value = false;
     std::string default_value;
     std::vector<std::string> comments;
 
     Field();
+    Field(const std::string& name);
+    Field(const std::string& name, SQLType data_type, const std::string& default_value);
     virtual ~Field();
 };
 
