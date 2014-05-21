@@ -32,7 +32,7 @@ public:
     Table& drop_constraint(const Constraint& c) {
         return drop_constraint(c.name);
     }
-    std::vector<Constraint> get_constraints() const {
+    const std::vector<Constraint>& get_constraints() const {
         return constraints;
     }
     std::vector<Constraint> unique_constraints() const;
@@ -43,7 +43,7 @@ public:
     Table& drop_index(const Index& i) {
         return drop_index(i.name);
     }
-    std::vector<Index> get_indices() const {
+    const std::vector<Index>& get_indices() const {
         return indices;
     }
 
