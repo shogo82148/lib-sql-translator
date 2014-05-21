@@ -5,6 +5,7 @@
  *      Author: shogo
  */
 
+#include <algorithm>
 #include "sqltranslator/Table.h"
 
 namespace sqltranslator {
