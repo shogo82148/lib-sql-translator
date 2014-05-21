@@ -47,6 +47,9 @@ public:
         return indices;
     }
 
+    Table& add_field(const Field& f);
+
+
     Table();
     virtual ~Table();
 };

@@ -78,9 +78,9 @@ class Field: public Object {
 public:
     SQLType data_type;
     std::string name;
-    bool is_auto_increment = false;
-    bool is_nullable = true;
-    bool has_default_value = false;
+    bool is_auto_increment;
+    bool is_nullable;
+    bool has_default_value;
     std::string default_value;
     std::vector<std::string> comments;
 

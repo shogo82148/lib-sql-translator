@@ -25,7 +25,7 @@ enum class IndexType {
 class Index: public Object {
 public:
     std::string name;
-    IndexType type = IndexType::normal;
+    IndexType type;
     std::vector<std::string> fields;
     std::vector<std::string> options;
 

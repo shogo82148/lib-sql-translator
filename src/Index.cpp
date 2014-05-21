@@ -10,8 +10,7 @@
 namespace sqltranslator {
 
 Index::Index() {
-    // TODO Auto-generated constructor stub
-
+    type = IndexType::normal;
 }
 
 Index::~Index() {

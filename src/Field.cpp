@@ -10,8 +10,10 @@
 namespace sqltranslator {
 
 Field::Field() {
-    // TODO Auto-generated constructor stub
-
+    data_type = SQLType::UNKNOWN_TYPE;
+    is_auto_increment = false;
+    is_nullable = true;
+    has_default_value = false;
 }
 
 Field::~Field() {
