@@ -6,6 +6,7 @@
  */
 
 #include <algorithm>
+#include <utility>
 #include "sqltranslator/Table.h"
 
 namespace sqltranslator {
@@ -60,6 +61,27 @@ Table& Table::drop_index(const std::string& name) {
     }
     indices.erase(i);
     return *this;
+}
+
+Table& Table::add_field(const Field& f) {
+    Field field(f);
+    if(field.order == 0) {
+        field.order = ++field_max_order;
+    } else {
+        field_max_order = field.order;
+    }
+    fields[f.name] = std::move(field);
+    return *this;
+}
+
+std::vector<Field> Table::get_fields() const {
+    std::vector<Field> v;
+    for(auto i : fields) {
+        v.push_back(i.second);
+    }
+    std::sort(v.begin(), v.end(),
+            [](Field const& a, Field const& b) { return a.order < b.order; });
+    return v;
 }
 
 Table::Table() {

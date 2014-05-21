@@ -83,6 +83,7 @@ public:
     bool has_default_value = false;
     std::string default_value;
     std::vector<std::string> comments;
+    int order = 0;
 
     Field();
     Field(const std::string& name);

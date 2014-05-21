@@ -24,6 +24,8 @@ private:
     std::vector<Constraint> constraints;
     std::vector<Index> indices;
     std::map<std::string, Field> fields;
+    int field_max_order;
+
 public:
     std::vector<std::string> comments;
 
@@ -48,7 +50,7 @@ public:
     }
 
     Table& add_field(const Field& f);
-
+    std::vector<Field> get_fields() const;
 
     Table();
     virtual ~Table();

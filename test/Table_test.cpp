@@ -91,4 +91,34 @@ TEST(table, index) {
     }
 }
 
+TEST(table, field) {
+    Field f1("f1"), f2("f2");
+
+    Table t;
+    t.add_field(f1);
+    t.add_field(f2);
+
+    {
+        auto fields = t.get_fields();
+        EXPECT_EQ(2, fields.size());
+        EXPECT_EQ("f1", fields[0].name);
+        EXPECT_EQ("f2", fields[1].name);
+    }
+}
+
+TEST(table, fieldOrder) {
+    Field f1("f1"), f2("f2");
+    f1.order = 2;
+    f2.order = 1;
+
+    Table t;
+    t.add_field(f1);
+    t.add_field(f2);
+
+    auto fields = t.get_fields();
+    EXPECT_EQ(2, fields.size());
+    EXPECT_EQ("f2", fields[0].name);
+    EXPECT_EQ("f1", fields[1].name);
+}
+
 } /* namespace sqltranslator */
