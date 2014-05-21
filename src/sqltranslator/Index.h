@@ -14,7 +14,7 @@
 
 namespace sqltranslator {
 
-enum class index_type {
+enum class IndexType {
     unique     = 0,
     normal     = 1,
     fulltext   = 2,
@@ -25,7 +25,7 @@ enum class index_type {
 class Index: public Object {
 public:
     std::string name;
-    index_type type = index_type::normal;
+    IndexType type = IndexType::normal;
     std::vector<std::string> fields;
     std::vector<std::string> options;
 

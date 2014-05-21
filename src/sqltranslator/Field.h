@@ -13,7 +13,7 @@
 #include "Object.h"
 
 namespace sqltranslator {
-enum class sql_type :int {
+enum class SQLType :int {
     GUID                           = -11,
     WLONGVARCHAR                   = -10,
     WVARCHAR                       =  -9,
@@ -76,7 +76,7 @@ enum class sql_type :int {
 
 class Field: public Object {
 public:
-    sql_type data_type;
+    SQLType data_type;
     std::string name;
     bool is_auto_increment = false;
     bool is_nullable = true;

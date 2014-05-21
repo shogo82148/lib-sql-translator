@@ -14,7 +14,7 @@
 
 namespace sqltranslator {
 
-enum class constraint_type {
+enum class ConstraintType {
     PRIMARY_KEY = 0,
     UNIQUE      = 1,
     CHECK_C     = 2,
@@ -22,7 +22,7 @@ enum class constraint_type {
     NOT_NULL    = 4,
 };
 
-enum class match_type {
+enum class MatchType {
     FULL,
     PARTIAL,
     SIMPLE,
@@ -34,8 +34,8 @@ public:
     std::string expression;
     std::string on_delete;
     std::string on_update;
-    constraint_type type;
-    match_type match_type;
+    ConstraintType type;
+    MatchType match_type;
     bool deferrable;
     std::vector<std::string> fields;
 

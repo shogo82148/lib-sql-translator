@@ -38,9 +38,9 @@ TEST(table, constraints) {
 TEST(table, uniqueConstraints) {
     Constraint c1, c2;
     c1.name = "constraint 1";
-    c2.type = constraint_type::PRIMARY_KEY;
+    c2.type = ConstraintType::PRIMARY_KEY;
     c2.name = "constraint 2";
-    c2.type = constraint_type::UNIQUE;
+    c2.type = ConstraintType::UNIQUE;
 
     Table t;
     t.add_constraint(c1);
@@ -54,9 +54,9 @@ TEST(table, uniqueConstraints) {
 TEST(table, fkeyConstraints) {
     Constraint c1, c2;
     c1.name = "constraint 1";
-    c2.type = constraint_type::PRIMARY_KEY;
+    c2.type = ConstraintType::PRIMARY_KEY;
     c2.name = "constraint 2";
-    c2.type = constraint_type::FOREIGN_KEY;
+    c2.type = ConstraintType::FOREIGN_KEY;
 
     Table t;
     t.add_constraint(c1);
